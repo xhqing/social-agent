@@ -77,7 +77,9 @@ def _esc(t: str) -> str:
 
 
 def _needs_paren(inner: str) -> bool:
-    return bool(re.search(r"[+\-×·/]|\\pm|\\mp", inner))
+    # 先剥掉 HTML 标签：`</sub>` 里的 `/` 会被当成除号，导致 W<sub>n</sub> 被多加括号
+    plain = re.sub(r"<[^>]+>", "", inner)
+    return bool(re.search(r"[+\-×·/]|\\pm|\\mp", plain))
 
 
 def to_text(tex: str, wrap: bool = True) -> str:
@@ -99,7 +101,10 @@ def to_text(tex: str, wrap: bool = True) -> str:
         a, b = to_text(a, wrap=False), to_text(b, wrap=False)
         num = f"({a})" if _needs_paren(a) else a
         den = f"({b})" if _needs_paren(b) else b
-        s = s[:m.start()] + f"{num}/{den}" + s[i:]
+        tail = s[i:]
+        # 分母后面紧跟字母 / 命令时补一个乘号，否则 1/n\ln(...) 会拼成 1/nln(...)
+        sep = "·" if re.match(r"[A-Za-z\\]", tail) else ""
+        s = s[:m.start()] + f"{num}/{den}" + sep + tail
 
     # \sqrt{A} → √(A)
     while True:
@@ -153,13 +158,21 @@ def to_text(tex: str, wrap: bool = True) -> str:
             if tag == "sup" and inner in uni:
                 s = s[:pos.start()] + uni[inner] + s[i:]
             else:
-                s = s[:pos.start()] + f"<{tag}>{inner}</{tag}>" + s[i:]
+                # 上标内容含运算符时加括号：1.188^{1/3} 不加括号会看成 1.188¹/³
+                plain = re.sub(r"<[^>]+>", "", inner)
+                body = f"({inner})" if (tag == "sup" and re.search(r"[+\-×·/]", plain)) else inner
+                s = s[:pos.start()] + f"<{tag}>{body}</{tag}>" + s[i:]
 
     # 简单命令替换（对以字母结尾的命令加字母边界守卫，避免误改前缀；纯符号命令不加）
     for cmd in sorted(list(GREEK) + list(SYMBOLS) + list(FUNC_CMDS), key=len, reverse=True):
         rep = GREEK.get(cmd, SYMBOLS.get(cmd, FUNC_CMDS.get(cmd, "")))
-        guard = r"(?![a-zA-Z])" if cmd[-1].isalpha() else ""
-        s = re.sub(re.escape(cmd) + guard, rep, s)
+        # 只有「替换结果是字母」的命令才需要字母边界守卫（避免 \lnx 被当成 \ln + x）；
+        # 符号类（\cdot → ·）后面紧跟字母是合法的，不加守卫，否则 \cdot\mathrm{EV} 会漏掉
+        if rep and rep[-1].isalpha():
+            s = re.sub(re.escape(cmd) + r"(?=[a-zA-Z<])", rep + " ", s)  # 粘连（如 \ln\frac → ln W）补空格
+            s = re.sub(re.escape(cmd) + r"(?![a-zA-Z])", rep, s)
+        else:
+            s = re.sub(re.escape(cmd), rep, s)
 
     # 剩余未知命令 → 交给图片
     unknown = re.search(r"\\[a-zA-Z]+", s)
@@ -170,8 +183,10 @@ def to_text(tex: str, wrap: bool = True) -> str:
     s = re.sub(r"\s{2,}", " ", s).strip()
     if not s:
         raise ComplexMath("空公式")
-    limit = 24 if frac_seen else 46  # 含分式的内联公式只在很短时才走文本
-    if len(s) > limit:  # 过长的内联公式用图片更好排版
+    # 长度按「可见字符」算：<sub>/<sup> 是排版手段，不该占用阈值
+    visible = re.sub(r"<[^>]+>", "", s)
+    limit = 24 if frac_seen else 46
+    if len(visible) > limit:  # 过长的内联公式用图片更好排版
         raise ComplexMath("内联公式过长")
     if wrap:
         # 用 <i> 而不是带 font-family 的 span：每处省上百字符，公众号有 2 万字符上限
