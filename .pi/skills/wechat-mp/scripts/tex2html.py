@@ -158,7 +158,10 @@ def to_text(tex: str, wrap: bool = True) -> str:
             if tag == "sup" and inner in uni:
                 s = s[:pos.start()] + uni[inner] + s[i:]
             else:
-                s = s[:pos.start()] + f"<{tag}>{inner}</{tag}>" + s[i:]
+                # 上标内容含运算符时加括号：1.188^{1/3} 不加括号会看成 1.188¹/³
+                plain = re.sub(r"<[^>]+>", "", inner)
+                body = f"({inner})" if (tag == "sup" and re.search(r"[+\-×·/]", plain)) else inner
+                s = s[:pos.start()] + f"<{tag}>{body}</{tag}>" + s[i:]
 
     # 简单命令替换（对以字母结尾的命令加字母边界守卫，避免误改前缀；纯符号命令不加）
     for cmd in sorted(list(GREEK) + list(SYMBOLS) + list(FUNC_CMDS), key=len, reverse=True):
