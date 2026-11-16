@@ -1,5 +1,11 @@
 # CHANGELOG
 
+### 变更（复利第一篇改名为《交易之魂：量化复利》，2026-11-16）
+
+- **为什么改**：用户 2026-11-16 把这篇的标题改成《交易之魂：量化复利》，要求博客同步。
+- **改了什么**：① `docs/articles/compounding-three-switches.md` 的 H1 改为新标题；② 同系列文章的导航与引言里对该篇的引用同步改名（`three-switches-derivation.md` 1 处、`compounding-size.md` 1 处、`compounding-verify.md` 1 处、`compounding-assumptions.md` 2 处）；③ 博客侧文件名与侧边栏同步（blog 仓库 PR #19，合并 commit `b3ca4a7`）。
+- **不发版**：项目本体维护类改动（2026-10-09 口径），VERSION 仍为 1.4.0。
+
 ### 变更（复利第一篇去掉唯一的小节标题，并入正文，2026-11-16）
 
 - **为什么改**：用户 2026-11-16 指出「这行公式是怎么来的？」只是一句过渡问句，不该占二级 / 三级标题层级。
