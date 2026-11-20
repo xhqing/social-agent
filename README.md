@@ -5,7 +5,7 @@
 <div align="center">
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
-[![Version](https://img.shields.io/badge/Version-1.4.0-blue.svg)](VERSION)
+[![Version](https://img.shields.io/badge/Version-1.5.0-blue.svg)](VERSION)
 [![Type](https://img.shields.io/badge/Type-AI%20Agent-FF1493.svg)](#)
 
 </div>
@@ -16,7 +16,7 @@
 
 [简体中文](README_cn.md)
 
-social-agent owns the operation of the owner's social media matrix — centered on the WeChat group chat "AI 实战派" (AI Practitioners) as its private-domain core, spanning YouTube, Xiaohongshu, the WeChat Official Account, 小绿书 image posts, WeChat Channels, the Xiaohongshu / XChat / IG / Threads group chats, Moments, X, GitHub, Instagram, Facebook, Threads, Bilibili, and Douyin. Day to day: content planning, cadence, and distribution across platforms; group-chat positioning and rule iteration; welcome flows; topic calendars; content curation; and operating retrospectives. The owner stays in the loop as guide and executor — everything posted goes through their hands.
+social-agent owns the operation of the owner's social media matrix — centered on the WeChat group chat 「碳基长官の交流群」 (Carbon Commander's exchange group) as its private-domain core, spanning YouTube, Xiaohongshu, the WeChat Official Account, 小绿书 image posts, WeChat Channels, the Xiaohongshu / XChat / IG / Threads group chats, Moments, X, GitHub, Instagram, Facebook, Threads, Bilibili, and Douyin. Day to day: content planning, cadence, and distribution across platforms; group-chat positioning and rule iteration; welcome flows; topic calendars; content curation; and operating retrospectives. The owner stays in the loop as guide and executor — everything posted goes through their hands.
 
 ---
 
@@ -61,8 +61,9 @@ Eighteen platforms with the WeChat group chat as the private-domain core (X adde
 
 Born from the group's founding announcement (authored by the owner, 2026):
 
-- AI is reshaping every industry — whatever your line of work, AI can help; the real question is how to put it to use.
-- The group bonds over **hands-on AI experience** (AI Practitioners): how AI applies to your own work, what it actually delivers, and the pitfalls along the way. New models and tools get shared as they land, but the focus stays on putting them to work.
+- AI is reshaping every industry — knowing how to use it well is now a basic requirement, but this group is not only about AI.
+- What we talk about is how to think a problem through, run the numbers, and then put it to work: any industry, any tool, AI being the one most often used.
+- Shared content holds three lines: show the basis, show the numbers, and still work in the next situation. If something can be verified, walk others through the process so they can reproduce it; if it can't be verified yet, bring the pitfalls and the open questions.
 - The owner's whole AI-agent team is open-sourced at [github.com/xhqing](https://github.com/xhqing/) — group members are welcome to look around anytime.
 
 ---
