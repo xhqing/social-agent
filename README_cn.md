@@ -5,7 +5,7 @@
 <div align="center">
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
-[![Version](https://img.shields.io/badge/Version-1.4.0-blue.svg)](VERSION)
+[![Version](https://img.shields.io/badge/Version-1.5.0-blue.svg)](VERSION)
 [![Type](https://img.shields.io/badge/Type-AI%20Agent-FF1493.svg)](#)
 
 </div>
@@ -16,7 +16,7 @@
 
 [English](README.md)
 
-social-agent 负责运营社媒账号矩阵——以微信群聊“AI 实战派”为私域核心，覆盖 YouTube、小红书、公众号、小绿书、视频号、小红书 / XChat / IG / Threads 群聊、朋友圈、X、GitHub、Instagram、Facebook、Threads、B站 与抖音。日常工作：各平台内容策划、节奏与分发，群聊定位与群规迭代、新人欢迎流程、话题日历、内容整理、运营复盘。全程由人工把关与执行——发出去的每一条内容都经人工确认。
+social-agent 负责运营社媒账号矩阵——以微信群聊「碳基长官の交流群」为私域核心，覆盖 YouTube、小红书、公众号、小绿书、视频号、小红书 / XChat / IG / Threads 群聊、朋友圈、X、GitHub、Instagram、Facebook、Threads、B站 与抖音。日常工作：各平台内容策划、节奏与分发，群聊定位与群规迭代、新人欢迎流程、话题日历、内容整理、运营复盘。全程由人工把关与执行——发出去的每一条内容都经人工确认。
 
 ---
 
@@ -61,8 +61,9 @@ social-agent 负责运营社媒账号矩阵——以微信群聊“AI 实战派�
 
 定位源自群公告原文（2026）：
 
-- AI 已渗透各行各业，不管你在哪一行，AI 都能帮上忙——问题只是怎么把它用起来。
-- 以 AI 为纽带，主打 **AI 实战经验交流**（“实战派”：真正动手把 AI 用起来的人——AI 结合各位所在的行业，怎么用、用出什么效果、踩过哪些坑；新的模型和工具也会第一时间分享，但重点始终是把它用起来）。
+- AI 已渗透各行各业，会用 AI、用好 AI 是各行各业人士的基本诉求——但这里不只聊 AI。
+- 聊的核心是怎么把问题想清楚、算明白，再用起来：不限定行业，也不限定工具，AI 是其中常用的一种。
+- 分享的内容尽量守住三条：说得出依据、算得出数字、换个场景还用得上。能验算的把过程摊开讲，暂时验不了的也可以把踩过的坑和没想明白的问题拿来问。
 - 整套 AI 智能体团队全部开源在 [github.com/xhqing](https://github.com/xhqing/)，欢迎群友随时参观。
 
 ---
