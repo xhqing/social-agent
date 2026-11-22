@@ -5,7 +5,7 @@
 <div align="center">
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
-[![Version](https://img.shields.io/badge/Version-1.5.0-blue.svg)](VERSION)
+[![Version](https://img.shields.io/badge/Version-1.6.0-blue.svg)](VERSION)
 [![Type](https://img.shields.io/badge/Type-AI%20Agent-FF1493.svg)](#)
 
 </div>
@@ -61,9 +61,10 @@ social-agent 负责运营社媒账号矩阵——以微信群聊「碳基长官�
 
 定位源自群公告原文（2026）：
 
-- AI 已渗透各行各业，会用 AI、用好 AI 是各行各业人士的基本诉求——但这里不只聊 AI。
-- 聊的核心是怎么把问题想清楚、算明白，再用起来：不限定行业，也不限定工具，AI 是其中常用的一种。
-- 分享的内容尽量守住三条：说得出依据、算得出数字、换个场景还用得上。能验算的把过程摊开讲，暂时验不了的也可以把踩过的坑和没想明白的问题拿来问。
+- 群里的内容是能直接用上的东西，主要五类：AI Agent 的技能与工具、软件开发、交易（智能体 / 量化 / 主观）、AIGC、社媒运营与广告投放。
+- AI 是其中占比很大的一块，但不是全部——软件开发、广告投放、主观交易这些不依赖 AI 的经验同样欢迎。
+- 分享时讲清自己怎么做的、结果怎样、哪里没成，比只给结论有用。交易类内容只聊方法与工具：不荐股、不给买卖点、不做跟单引导。
+- 主题之外的话题偶尔聊聊没关系，但请尽量围绕这五类发。
 - 整套 AI 智能体团队全部开源在 [github.com/xhqing](https://github.com/xhqing/)，欢迎群友随时参观。
 
 ---

@@ -5,7 +5,7 @@
 <div align="center">
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
-[![Version](https://img.shields.io/badge/Version-1.5.0-blue.svg)](VERSION)
+[![Version](https://img.shields.io/badge/Version-1.6.0-blue.svg)](VERSION)
 [![Type](https://img.shields.io/badge/Type-AI%20Agent-FF1493.svg)](#)
 
 </div>
@@ -61,9 +61,10 @@ Eighteen platforms with the WeChat group chat as the private-domain core (X adde
 
 Born from the group's founding announcement (authored by the owner, 2026):
 
-- AI is reshaping every industry — knowing how to use it well is now a basic requirement, but this group is not only about AI.
-- What we talk about is how to think a problem through, run the numbers, and then put it to work: any industry, any tool, AI being the one most often used.
-- Shared content holds three lines: show the basis, show the numbers, and still work in the next situation. If something can be verified, walk others through the process so they can reproduce it; if it can't be verified yet, bring the pitfalls and the open questions.
+- The group is about things members can put to use, in five lanes: AI-agent skills and tools, software development, trading (agent-driven, quant, discretionary), AIGC, and social-media operations and ad buying.
+- AI is the largest slice, not the whole thing — experience in software development, ad buying, or discretionary trading that owes nothing to AI is just as welcome.
+- Say how you did it, what came out of it, and where it failed; that beats handing over a conclusion. Trading talk stays on methods and tools: no stock picks, no entry and exit calls, no copy-trading pitches.
+- Off-topic chatter is fine now and then, but please keep it mostly to those five lanes.
 - The owner's whole AI-agent team is open-sourced at [github.com/xhqing](https://github.com/xhqing/) — group members are welcome to look around anytime.
 
 ---
