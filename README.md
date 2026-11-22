@@ -5,7 +5,7 @@
 <div align="center">
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
-[![Version](https://img.shields.io/badge/Version-1.6.0-blue.svg)](VERSION)
+[![Version](https://img.shields.io/badge/Version-1.7.0-blue.svg)](VERSION)
 [![Type](https://img.shields.io/badge/Type-AI%20Agent-FF1493.svg)](#)
 
 </div>
@@ -63,23 +63,9 @@ Born from the group's founding announcement (authored by the owner, 2026):
 
 - The group is about things members can put to use, in five lanes: AI-agent skills and tools, software development, trading (agent-driven, quant, discretionary), AIGC, and social-media operations and ad buying.
 - AI is the largest slice, not the whole thing — experience in software development, ad buying, or discretionary trading that owes nothing to AI is just as welcome.
-- Say how you did it, what came out of it, and where it failed; that beats handing over a conclusion. Trading talk stays on methods and tools: no stock picks, no entry and exit calls, no copy-trading pitches.
-- Off-topic chatter is fine now and then, but please keep it mostly to those five lanes.
+- Trading talk stays on methods and tools: no stock picks, no entry and exit calls, no copy-trading pitches.
+- Keep it mostly to those lanes. Off-topic volume crowds out the substance, and everyone's feed gets thinner for it.
 - The owner's whole AI-agent team is open-sourced at [github.com/xhqing](https://github.com/xhqing/) — group members are welcome to look around anytime.
-
----
-
-## Three-layer fair governance (the community's signature)
-
-The community's fairness mechanism has three layers, open to every member:
-
-| Layer | Vehicle | What it does | Status |
-|---|---|---|---|
-| Operations | The rule-revision procedure (7-day public notice) | A written procedural promise — even the owner can't change rules on a whim | ✅ Live |
-| Record | Public GitHub repo + Release publishing | Every revision gets a publicly timestamped version history, one click to verify | ✅ Live |
-| Commitment | Blockchain attestation (revision records immutable once written, verifiable by anyone) | The hard promise that "even the owner must wait out the notice period" | 📋 Open option |
-
-The commitment layer is not implemented yet, but its design is public ([commitment-layer.md](docs/community/commitment-layer.md)) — it's both a community signature and an option members know about: **if enough members explicitly ask for it, it gets built**.
 
 ---
 
