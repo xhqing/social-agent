@@ -5,7 +5,7 @@
 <div align="center">
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
-[![Version](https://img.shields.io/badge/Version-1.6.0-blue.svg)](VERSION)
+[![Version](https://img.shields.io/badge/Version-1.7.0-blue.svg)](VERSION)
 [![Type](https://img.shields.io/badge/Type-AI%20Agent-FF1493.svg)](#)
 
 </div>
@@ -63,23 +63,9 @@ social-agent 负责运营社媒账号矩阵——以微信群聊「碳基长官�
 
 - 群里的内容是能直接用上的东西，主要五类：AI Agent 的技能与工具、软件开发、交易（智能体 / 量化 / 主观）、AIGC、社媒运营与广告投放。
 - AI 是其中占比很大的一块，但不是全部——软件开发、广告投放、主观交易这些不依赖 AI 的经验同样欢迎。
-- 分享时讲清自己怎么做的、结果怎样、哪里没成，比只给结论有用。交易类内容只聊方法与工具：不荐股、不给买卖点、不做跟单引导。
-- 主题之外的话题偶尔聊聊没关系，但请尽量围绕这五类发。
+- 交易类内容只聊方法与工具：不荐股、不给买卖点、不做跟单引导。
+- 请尽量围绕这几类发言：跑题的内容多了，干货会被冲掉，大家看到的内容信息密度就降低。
 - 整套 AI 智能体团队全部开源在 [github.com/xhqing](https://github.com/xhqing/)，欢迎群友随时参观。
-
----
-
-## 三层公平治理（社群特色）
-
-本群的公平治理理念分三层，对全体群友公开，欢迎监督：
-
-| 层 | 载体 | 作用 | 状态 |
-|---|---|---|---|
-| 运营层 | 群规修订程序（提前 7 天公示） | 白纸黑字的程序承诺——运营团队也不能说改就改 | ✅ 已落地 |
-| 记录层 | GitHub 公开仓库 + Release 发版 | 每次修订有公开时间戳的版本历史，点链接即可查证 | ✅ 已落地 |
-| 承诺层 | 区块链存证（修订记录写入后不可修改、任何人可查证） | “运营团队想改也得等公示期满”的硬承诺 | 📋 公开备选 |
-
-承诺层暂不实施、方案公开（[commitment-layer.md](docs/community/commitment-layer.md)）——它既是社群特色，也是一个群友知晓的备选项：**如果有很多群友明确要求用上这一层，呼声够多就启动**。
 
 ---
 
