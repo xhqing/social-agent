@@ -1,5 +1,11 @@
 # CHANGELOG
 
+### 变更（AGENTS.md 的角色口径改成 agentLeader / subLeader / Worker 三级，2026-11-25）
+
+- **为什么改**：用户 2026-11-25 把全团队会话角色从「Agent 项目 = Leader / 子项目 = Worker」两分改成三级（agentLeader / subLeader / Worker），判据变成「项目类型 + 当前分支」；全局 `~/.pi/agent/AGENTS.md`「会话间协作」节与 `~/.pi/agent/docs/agents-registry.md` 第 5 条已改，本项目 AGENTS.md 还留着旧口径，会把 blog 主工作区的会话误判成 Worker（它实际上要能建 worktree、派单、合并 blog 的 PR）。
+- **改了什么**：① 「归属关系与文件规则」段里子项目 AGENTS.md 写的第三件事由「Worker 边界」改为「会话角色边界」（与注册表措辞一致）；② 「Leader / Worker 分工（2026-11-07 全局规则）」整段重写为三级角色——social-agent 主工作区 main = agentLeader（管自身 + blog）、blog 主工作区 main = subLeader（只管 blog 自身）、任何项目的非 main worktree = Worker；写明 local main 只 ff 同步、任务从最新 main 拷出 worktree、`agent_call` 的 `dir` 四类目录、启动带 `-a`，并指向全局注册表第 5 条为权威口径。
+- **边界**：只改角色表述，项目定位、社媒矩阵、发布红线、群公告版本管理都没动；`.pi/` 下没有 `APPEND_SYSTEM.md`（只有 `skills/`），无需同步。
+
 ### 变更（公告 v1.7.0：用户手改主题与条款，删掉【运营理念】【运营团队】，公示期改 1 天，2026-11-22）
 
 - **为什么改**：用户 2026-11-22 在 cmux 的 filepreview 面板里直接编辑 `docs/community/announcement.txt`，改完要求“直接发布为新版”。面板里的版本与仓库 v1.6.0 有七处不同，本次按面板内容逐行重建后发布（面板内容因 cmux 无自动保存未落盘，已另开 cmux#136 排期修）。

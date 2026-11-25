@@ -229,9 +229,15 @@ grep -nE "先把.{1,12}说清楚|这是.{1,20}不是|不是.{1,25}是|而是" <�
 
 本项目负责的子项目如下（与全局 `~/.pi/agent/docs/agents-registry.md` 的“子项目映射”表保持一致）。
 
-**归属关系与文件规则（2026-11-08 新规，取代 2026-10-30 的软链超集）**：Agent 项目与子项目**两边完全独立**——子项目根目录放**本仓库实体**的 `AGENTS.md`（项目定位 / 负责 Agent / Worker 边界 / 规则索引）与 `.pi/APPEND_SYSTEM.md`（本项目硬约束），两者随仓库提交；**不挂 `AGENTS.md` 软链接、不写 `.pi/settings.json` 的跨仓库资源路径**。全局 `~/.pi/agent/` 那层（团队规则、add / commit 技能、各类守卫）在任何目录都会加载，所以拆掉交叉引用不会丢保护。细则见全局 `~/.pi/agent/docs/agents-registry.md`「智能体专属文件归属与子项目映射」。
+**归属关系与文件规则（2026-11-08 新规，取代 2026-10-30 的软链超集）**：Agent 项目与子项目**两边完全独立**——子项目根目录放**本仓库实体**的 `AGENTS.md`（项目定位 / 负责 Agent / 会话角色边界 / 规则索引）与 `.pi/APPEND_SYSTEM.md`（本项目硬约束），两者随仓库提交；**不挂 `AGENTS.md` 软链接、不写 `.pi/settings.json` 的跨仓库资源路径**。全局 `~/.pi/agent/` 那层（团队规则、add / commit 技能、各类守卫）在任何目录都会加载，所以拆掉交叉引用不会丢保护。细则见全局 `~/.pi/agent/docs/agents-registry.md`「智能体专属文件归属与子项目映射」。
 
-**Leader / Worker 分工（2026-11-07 全局规则）**：本项目根目录起的会话是 **Leader**（只做 local main 同步、建 worktree、派任务、收尾）；子项目根 / 子项目 worktree 起的会话是 **Worker**（干具体活并向 Leader 汇报）。`agent_call` / `agent_wake` 的 `dir` 允许 Agent 项目根 / 已登记子项目根 / 子项目的 git worktree 三类，启动带 `-a`。子项目专属硬规则写进各自的 `.pi/APPEND_SYSTEM.md`。详见全局 `~/.pi/agent/AGENTS.md`“Leader / Worker 分工”与 `~/.pi/agent/docs/agents-registry.md` 第 4 条。
+**Leader / Worker 分工（2026-11-25 三级角色，取代 2026-11-07 的「Agent 项目 = Leader、子项目 = Worker」两分）**：
+
+- **agentLeader = 本项目（social-agent）主工作区停在 `main` 分支的会话**：管自身项目 + 名下全部子项目（现为 blog）——两者的 local main（只 `fetch` + `merge --ff-only`）、分支与 worktree、建树派单、合并 PR、发版、收尾。
+- **subLeader = blog 主工作区停在 `main` 分支的会话**：只管 blog 自身——local main 的 ff 同步、从 blog 的 main 建删任务 worktree、派 Worker、合并 blog 的 PR、发 blog 的版、回收自己的 Worker；对 social-agent 与其它子项目只读（要它们变就走 `agent_call` 找 agentLeader，或给对方仓库建 Issue）。
+- **Worker = 任何项目停在非 `main` 分支 worktree 的会话**：只干当前 worktree 里的活（改代码 / 改稿 / 跑校验 / 提交 / push 自己的分支 + PR），干完向派它的 Leader 汇报；不碰 local main、不建删 worktree、不合并 PR、不发版、不写当前 worktree 以外的项目。
+- **任务从最新 main 拷出**：`git worktree add ../<仓库名>-<事项> -b <分支>`，任务只在 worktree 里做；派单时把该 worktree 的绝对路径作为 `agent_call` 的 `dir`。
+- **`dir` 四类目录**：Agent 项目根（main → agentLeader）/ Agent 项目 worktree（Worker）/ 已登记子项目根（main → subLeader）/ 子项目 worktree（Worker），启动带 `-a`，其它目录被拒绝。子项目专属硬规则写进各自的 `.pi/APPEND_SYSTEM.md`。权威口径见全局 `~/.pi/agent/AGENTS.md`「会话间协作」节与 `~/.pi/agent/docs/agents-registry.md` 第 5 条。
 
 | 子项目 | 仓库 | 说明 |
 |---|---|---|
